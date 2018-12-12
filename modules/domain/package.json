@@ -2,11 +2,15 @@
   "name": "@januswel/domain",
   "version": "1.0.0",
   "description": "domain",
-  "main": "index.js",
+  "main": "src/index.js",
   "author": "Takagi Kensuke <janus.wel.3@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
+    "jest": "23.6.0",
     "prettier": "1.15.3"
   }
 }
