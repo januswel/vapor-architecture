@@ -1,0 +1,13 @@
+{
+  "name": "vapor-architecture",
+  "author": "Takagi Kensuke <janus.wel.3@gmail.com>",
+  "version": "1.0.0",
+  "description": "vapor architecture",
+  "main": "index.js",
+  "repository": "https://github.com/januswel/vapor-architecture",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "modules/*"
+  ]
+}
