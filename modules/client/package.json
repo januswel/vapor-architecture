@@ -11,5 +11,8 @@
   },
   "dependencies": {
     "@januswel/domain": "1.0.0"
+  },
+  "devDependencies": {
+    "prettier": "1.15.3"
   }
 }

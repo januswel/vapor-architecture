@@ -5,5 +5,8 @@
   "main": "index.js",
   "author": "Takagi Kensuke <janus.wel.3@gmail.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "prettier": "1.15.3"
+  }
 }
