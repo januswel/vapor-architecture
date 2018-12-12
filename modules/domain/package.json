@@ -1,16 +1,23 @@
 {
-  "name": "@januswel/domain",
+  "name": "vapor-domain",
   "version": "1.0.0",
   "description": "domain",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "author": "Takagi Kensuke <janus.wel.3@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest"
+    "build": "tsc",
+    "prebuild": "rm -rf ./dist",
+    "test": "jest",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
+    "@types/jest": "23.3.10",
+    "@types/node": "10.12.12",
     "jest": "23.6.0",
-    "prettier": "1.15.3"
+    "prettier": "1.15.3",
+    "ts-jest": "23.10.5",
+    "typescript": "3.2.2"
   }
 }

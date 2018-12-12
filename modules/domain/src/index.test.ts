@@ -1,5 +1,5 @@
-const assert = require('assert')
-const sum = require('./index')
+import * as assert from 'assert'
+import sum from './index'
 
 describe('sum', () => {
   it('1 + 2 to equals 3', () => {

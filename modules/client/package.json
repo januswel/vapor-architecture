@@ -1,16 +1,19 @@
 {
-  "name": "@januswel/client",
+  "name": "vapor-client",
   "version": "1.0.0",
   "description": "client",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Takagi Kensuke <janus.wel.3@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node ./index.js"
+    "build": "tsc",
+    "prebuild": "rm -rf dist",
+    "start": "node ./dist/index.js",
+    "prestart": "npm run build"
   },
   "dependencies": {
-    "@januswel/domain": "1.0.0"
+    "vapor-domain": "1.0.0"
   },
   "devDependencies": {
     "prettier": "1.15.3"
