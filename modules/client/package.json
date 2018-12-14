@@ -16,7 +16,6 @@
     "vapor-domain": "1.0.0"
   },
   "devDependencies": {
-    "prettier": "1.15.3",
     "typescript": "3.2.2"
   }
 }
