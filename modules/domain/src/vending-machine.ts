@@ -3,9 +3,9 @@ import * as assert from 'assert'
 import * as Drink from './drink'
 import { Coin } from './coin'
 
-export interface VendingMachine {
+export interface Entity {
   inventory: Array<{
-    drink: Drink.Subject,
+    drink: Drink.Entity,
     price: number,
     remains: number,
   }>;
@@ -20,7 +20,7 @@ interface Item {
 export type Seed = Array<Item>
 
 // initial state
-export const factory = (inventory: Seed): VendingMachine => {
+export const factory = (inventory: Seed): Entity => {
   const vendingMachine = {
     inventory: inventory.map(item => ({
       drink: Drink.factory(item.drinkId),
@@ -33,17 +33,17 @@ export const factory = (inventory: Seed): VendingMachine => {
 }
 
 // utility functions
-export const selectableMaxIndex = (vendingMachine: VendingMachine) => vendingMachine.inventory.length - 1
+export const selectableMaxIndex = (vendingMachine: Entity) => vendingMachine.inventory.length - 1
 
 // update functions
-export const charge = (vendingMachine: VendingMachine, coin: Coin): VendingMachine => {
+export const charge = (vendingMachine: Entity, coin: Coin): Entity => {
   return {
     ...vendingMachine,
     chargedMoney: vendingMachine.chargedMoney + coin,
   }
 }
 
-export const buy = (vendingMachine: VendingMachine, selectedIndex: number) => {
+export const buy = (vendingMachine: Entity, selectedIndex: number) => {
   assert(selectedIndex <= selectableMaxIndex(vendingMachine))
 
   const selectedItem = vendingMachine.inventory[selectedIndex]
