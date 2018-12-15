@@ -1,32 +1,24 @@
 import * as assert from 'assert'
 
 import * as Drink from './drink'
+import * as Item from './item'
 import { Coin } from './coin'
 
 export interface Entity {
-  inventory: Array<{
-    drink: Drink.Entity,
-    price: number,
-    remains: number,
-  }>;
+  inventory: Array<Item.Entity>;
   chargedMoney: number;
 }
 
-interface Item {
-  drinkId: Drink.Id;
-  price: number;
-  remains: number;
-}
-export type Seed = Array<Item>
+export type InventorySeeds = Array<{
+  drinkId: Drink.Id,
+  price: number,
+  remains: number,
+}>
 
 // initial state
-export const factory = (inventory: Seed): Entity => {
+export const factory = (inventorySeeds: InventorySeeds): Entity => {
   const vendingMachine = {
-    inventory: inventory.map(item => ({
-      drink: Drink.factory(item.drinkId),
-      price: item.price,
-      remains: item.remains,
-    })),
+    inventory: inventorySeeds.map(item => Item.factory(item.drinkId, item.price, item.remains)),
     chargedMoney: 0,
   }
   return vendingMachine
@@ -43,7 +35,7 @@ export const charge = (vendingMachine: Entity, coin: Coin): Entity => {
   }
 }
 
-export const buy = (vendingMachine: Entity, selectedIndex: number) => {
+export const buy = (vendingMachine: Entity, selectedIndex: number): Entity => {
   assert(selectedIndex <= selectableMaxIndex(vendingMachine))
 
   const selectedItem = vendingMachine.inventory[selectedIndex]
@@ -59,6 +51,7 @@ export const buy = (vendingMachine: Entity, selectedIndex: number) => {
     inventory: vendingMachine.inventory.map((item, index) => {
       return index === selectedIndex
         ? {
+            id: item.id,
             drink: item.drink,
             price: item.price,
             remains: item.remains - 1,

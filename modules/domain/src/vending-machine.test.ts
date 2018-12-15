@@ -52,6 +52,7 @@ describe('VendingMachine', () => {
       const chargedState = VendingMachine.charge(initialState, 500)
       const newState = VendingMachine.buy(chargedState, 0)
       assert(newState.chargedMoney === 380)
+      assert(newState.inventory[0].id != null)
       assert(newState.inventory[0].drink.name === 'coffee')
       assert(newState.inventory[0].price === 120)
       assert(newState.inventory[0].remains === 0)
