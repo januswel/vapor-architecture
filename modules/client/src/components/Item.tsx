@@ -36,28 +36,15 @@ const ButtonLabel = props => {
 }
 
 export default props => {
-  const isSoldOut = props.item.remains === 0
-  const isTooFewChargedMoney = props.vendingMachine.chargedMoney < props.item.drink.price
-
-  return isSoldOut || isTooFewChargedMoney ? (
-    <ButtonLabel
-      isSoldOut={isSoldOut}
-      isTooFewChargedMoney={isTooFewChargedMoney}
-      name={props.item.drink.name}
-      price={props.item.drink.price}
-    />
+  return props.isSoldOut || props.isTooFewChargedMoney ? (
+    <ButtonLabel {...props} />
   ) : (
     <TouchableOpacity
       onPress={() => {
         props.actions.buy(props.index)
       }}
     >
-      <ButtonLabel
-        isSoldOut={isSoldOut}
-        isTooFewChargedMoney={isTooFewChargedMoney}
-        name={props.item.drink.name}
-        price={props.item.drink.price}
-      />
+      <ButtonLabel {...props} />
     </TouchableOpacity>
   )
 }

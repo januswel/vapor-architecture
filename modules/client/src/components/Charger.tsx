@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 export default props => (
   <View style={styles.container}>
     <View style={styles.chargedMoney}>
-      <Text style={styles.label}>¥ {props.vendingMachine.chargedMoney}</Text>
+      <Text style={styles.label}>¥ {props.chargedMoney}</Text>
     </View>
     <View style={styles.coins}>
       <Coin {...props} price={10} />

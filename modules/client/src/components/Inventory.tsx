@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
 export default props => (
   <FlatList
     style={styles.container}
-    data={props.vendingMachine.inventory}
-    extraDate={props.vendingMachine.chargedMoney}
+    data={props.inventory}
+    extraDate={props.chargedMoney}
     numColumns={2}
-    renderItem={({ item, index }) => <Item {...props} item={item} index={index} />}
-    keyExtractor={item => item.drink.id.toString()}
+    renderItem={({ item, index }) => <Item {...item} actions={props.actions} index={index} />}
+    keyExtractor={item => item.id.toString()}
   />
 )
