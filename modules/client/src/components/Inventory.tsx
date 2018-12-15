@@ -16,6 +16,6 @@ export default props => (
     extraDate={props.chargedMoney}
     numColumns={2}
     renderItem={({ item, index }) => <Item {...item} actions={props.actions} index={index} />}
-    keyExtractor={item => item.id.toString()}
+    keyExtractor={item => item.id}
   />
 )

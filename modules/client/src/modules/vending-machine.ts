@@ -10,6 +10,11 @@ const inventory = [
     remains: 10,
   },
   {
+    drinkId: 0,
+    price: 130,
+    remains: 10,
+  },
+  {
     drinkId: 1,
     price: 100,
     remains: 10,
