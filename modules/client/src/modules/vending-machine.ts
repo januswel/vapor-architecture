@@ -6,14 +6,17 @@ const BUY = 'vending-machine/buy'
 const inventory = [
   {
     drinkId: 0,
+    price: 120,
     remains: 10,
   },
   {
     drinkId: 1,
+    price: 100,
     remains: 10,
   },
   {
     drinkId: 2,
+    price: 120,
     remains: 10,
   },
 ]

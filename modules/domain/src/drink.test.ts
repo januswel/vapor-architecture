@@ -6,7 +6,6 @@ describe('Drink.factory', () => {
   it('returns Drink', () => {
     const item = Drink.factory(0)
     assert(item.name === 'coffee')
-    assert(item.price === 120)
   })
   it('asserts with non-exist id', () => {
     assert.throws(() => {

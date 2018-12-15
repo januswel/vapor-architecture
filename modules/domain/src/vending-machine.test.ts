@@ -5,10 +5,12 @@ import * as VendingMachine from './vending-machine'
 const inventory = [
   {
     drinkId: 0,
+    price: 120,
     remains: 1,
   },
   {
     drinkId: 1,
+    price: 100,
     remains: 0,
   },
 ]
@@ -20,7 +22,7 @@ describe('VendingMachine', () => {
       assert(vendingMachine != null)
       assert(vendingMachine.inventory != null)
       assert(vendingMachine.inventory[0].drink.name === 'coffee')
-      assert(vendingMachine.inventory[0].drink.price === 120)
+      assert(vendingMachine.inventory[0].price === 120)
       assert(vendingMachine.inventory[0].remains === 1)
     })
     it('asserts with non-exist drink id', () => {
@@ -28,6 +30,7 @@ describe('VendingMachine', () => {
         const vendingMachine = VendingMachine.factory(
           inventory.concat({
             drinkId: 2938,
+            price: 120,
             remains: 10,
           }),
         )

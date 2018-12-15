@@ -7,7 +7,6 @@ export type Id = number
 export interface Subject {
   id: Id;
   name: string;
-  price: number;
 }
 
 export const factory = (id: Id): Subject => {
@@ -17,6 +16,5 @@ export const factory = (id: Id): Subject => {
   return {
     id,
     name: ITEM_MASTER.name,
-    price: ITEM_MASTER.price,
   }
 }
