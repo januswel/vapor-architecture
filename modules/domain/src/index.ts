@@ -1,1 +1,3 @@
-export default (a, b) => a + b
+import * as VendingMachine from './vending-machine'
+
+export default VendingMachine
