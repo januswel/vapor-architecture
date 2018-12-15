@@ -15,7 +15,7 @@ interface Item {
   drinkId: Drink.Id;
   remains: number;
 }
-type Inventory = Array<Item>
+export type Inventory = Array<Item>
 
 // initial state
 export const factory = (inventory: Inventory): VendingMachine => {
