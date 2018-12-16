@@ -9,6 +9,7 @@ describe('Drink', () => {
         const drink = Drink.repository.getById(0)
         assert(drink.id === 0)
         assert(drink.name === 'coffee')
+        assert(drink.imageUrl === 'http://localhost:3000/images/coffee.png')
       })
       it('asserts with non-exist id', () => {
         assert.throws(() => {
@@ -22,6 +23,7 @@ describe('Drink', () => {
       const drink = drinks[0]
       assert(drink.id === 0)
       assert(drink.name === 'coffee')
+      assert(drink.imageUrl === 'http://localhost:3000/images/coffee.png')
     })
   })
 })

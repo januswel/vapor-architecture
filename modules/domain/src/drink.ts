@@ -8,6 +8,7 @@ export type Id = number
 export interface Entity {
   id: Id;
   name: string;
+  imageUrl: string;
 }
 
 export const repository = {

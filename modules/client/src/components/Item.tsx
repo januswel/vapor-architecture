@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { Image, View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
@@ -9,8 +9,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
   },
-  name: {
-    fontSize: 24,
+  thumbnail: {
+    width: 96,
+    height: 96,
   },
   price: {
     fontSize: 16,
@@ -29,7 +30,7 @@ const ButtonLabel = props => {
 
   return (
     <View style={[styles.container, backgroundStyle]}>
-      <Text style={styles.name}>{props.drink.name}</Text>
+      <Image style={styles.thumbnail} source={{ uri: props.drink.imageUrl }} resizeMode="contain" />
       <Text style={styles.price}>¥{props.price}</Text>
     </View>
   )
