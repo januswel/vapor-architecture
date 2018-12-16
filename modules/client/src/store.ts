@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
-import reducer from './modules/vending-machine'
+import appReducer from './modules'
 
-export default createStore(reducer, applyMiddleware(thunk))
+export default createStore(appReducer, applyMiddleware(thunk))
