@@ -21,3 +21,7 @@ yarn start
 ```
 
 Start a client. Open Xcode project under modules/client/ios/ and `Run`
+
+## Show numbers of sold drinks
+
+Access http://localhost:3000/items
