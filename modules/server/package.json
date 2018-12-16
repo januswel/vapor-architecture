@@ -1,20 +1,26 @@
 {
-  "name": "vapor-domain",
+  "name": "vapor-server",
   "version": "1.0.0",
-  "description": "domain",
-  "main": "dist/index.js",
+  "description": "server",
   "author": "Takagi Kensuke <janus.wel.3@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
+    "start": "node ./dist/index.js",
+    "prestart": "npm run build",
     "build": "tsc",
     "prebuild": "rm -rf ./dist",
     "test": "jest",
     "prepublish": "npm run build"
   },
+  "dependencies": {
+    "express": "4.16.4",
+    "body-parser": "1.18.3",
+    "vapor-domain": "1.0.0"
+  },
   "devDependencies": {
+    "@types/express": "4.16.0",
     "@types/jest": "23.3.10",
-    "@types/node": "10.12.12",
     "jest": "23.6.0",
     "ts-jest": "23.10.5",
     "typescript": "3.2.2"

@@ -1,3 +1,4 @@
+import * as Drink from './drink'
 import * as VendingMachine from './vending-machine'
 
-export default VendingMachine
+export { Drink, VendingMachine }
