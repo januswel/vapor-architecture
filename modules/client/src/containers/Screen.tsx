@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { charge, buy } from '../modules/vending-machine'
+import { charge, buyAndCount } from '../modules/vending-machine'
 import Screen from '../components/Screen'
 import inventorySelector from './selectors/get-inventory'
 
@@ -14,8 +14,8 @@ const mapDispatchToProps = dispatch => ({
     charge: chargedMoney => {
       dispatch(charge(chargedMoney))
     },
-    buy: selectedIndex => {
-      dispatch(buy(selectedIndex))
+    buyAndCount: itemId => {
+      dispatch(buyAndCount(itemId))
     },
   },
 })

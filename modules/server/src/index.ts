@@ -1,10 +1,10 @@
 import * as express from 'express'
-import drinks from './drinks'
+import items from './items'
 
 const app = express()
 
 app.use(express.static('public'))
-app.use('/drinks', drinks)
+app.use('/items', items)
 
 app.get('/', function(req, res) {
   res.send('Hello World')
