@@ -29,7 +29,7 @@ const ButtonLabel = props => {
 
   return (
     <View style={[styles.container, backgroundStyle]}>
-      <Text style={styles.name}>{props.name}</Text>
+      <Text style={styles.name}>{props.drink.name}</Text>
       <Text style={styles.price}>¥{props.price}</Text>
     </View>
   )

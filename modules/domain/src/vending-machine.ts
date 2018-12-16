@@ -4,28 +4,32 @@ import * as Drink from './drink'
 import * as Item from './item'
 import { Coin } from './coin'
 
+interface Inventory {
+  (id: string): Item.Entity;
+}
 export interface Entity {
   inventory: Array<Item.Entity>;
   chargedMoney: number;
 }
 
 export type InventorySeeds = Array<{
+  id: Item.Id,
   drinkId: Drink.Id,
   price: number,
   remains: number,
 }>
 
 // initial state
-export const factory = (inventorySeeds: InventorySeeds): Entity => {
+export const factory = (inventorySeeds?: InventorySeeds): Entity => {
   const vendingMachine = {
-    inventory: inventorySeeds.map(item => Item.factory(item.drinkId, item.price, item.remains)),
+    inventory:
+      inventorySeeds != null
+        ? inventorySeeds.map(item => Item.factory(item.id, item.drinkId, item.price, item.remains))
+        : Item.repository.getAll(),
     chargedMoney: 0,
   }
   return vendingMachine
 }
-
-// utility functions
-export const selectableMaxIndex = (vendingMachine: Entity) => vendingMachine.inventory.length - 1
 
 // update functions
 export const charge = (vendingMachine: Entity, coin: Coin): Entity => {
@@ -35,10 +39,10 @@ export const charge = (vendingMachine: Entity, coin: Coin): Entity => {
   }
 }
 
-export const buy = (vendingMachine: Entity, selectedIndex: number): Entity => {
-  assert(selectedIndex <= selectableMaxIndex(vendingMachine))
+export const buy = (vendingMachine: Entity, itemId: Item.Id): Entity => {
+  assert(itemId in vendingMachine.inventory)
 
-  const selectedItem = vendingMachine.inventory[selectedIndex]
+  const selectedItem = vendingMachine.inventory[itemId]
   if (vendingMachine.chargedMoney < selectedItem.price) {
     throw new Error(`too few charged money for selected item: ${vendingMachine.chargedMoney} < ${selectedItem.price}`)
   }
@@ -46,18 +50,16 @@ export const buy = (vendingMachine: Entity, selectedIndex: number): Entity => {
     throw new Error(`selected item is sold out: ${selectedItem.drink.name}`)
   }
 
+  const newInventory = {
+    ...vendingMachine.inventory,
+    [itemId]: {
+      ...selectedItem,
+      remains: selectedItem.remains - 1,
+    },
+  }
   return {
     ...vendingMachine,
-    inventory: vendingMachine.inventory.map((item, index) => {
-      return index === selectedIndex
-        ? {
-            id: item.id,
-            drink: item.drink,
-            price: item.price,
-            remains: item.remains - 1,
-          }
-        : item
-    }),
+    inventory: newInventory,
     chargedMoney: vendingMachine.chargedMoney - selectedItem.price,
   }
 }

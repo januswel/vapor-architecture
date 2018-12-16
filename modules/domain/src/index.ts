@@ -1,4 +1,4 @@
-import * as Drink from './drink'
+import * as Item from './item'
 import * as VendingMachine from './vending-machine'
 
-export { Drink, VendingMachine }
+export { Item, VendingMachine }

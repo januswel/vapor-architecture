@@ -2,14 +2,26 @@ import * as assert from 'assert'
 
 import * as Drink from './drink'
 
-describe('Drink.factory', () => {
-  it('returns Drink', () => {
-    const item = Drink.factory(0)
-    assert(item.name === 'coffee')
-  })
-  it('asserts with non-exist id', () => {
-    assert.throws(() => {
-      const item = Drink.factory(3942)
+describe('Drink', () => {
+  describe('repository', () => {
+    describe('getById', () => {
+      it('returns Drink', () => {
+        const drink = Drink.repository.getById(0)
+        assert(drink.id === 0)
+        assert(drink.name === 'coffee')
+      })
+      it('asserts with non-exist id', () => {
+        assert.throws(() => {
+          const item = Drink.repository.getById(3942)
+        })
+      })
+    })
+    describe('getAll', () => {
+      const drinks = Drink.repository.getAll()
+      assert(Object.keys(drinks).length === 3)
+      const drink = drinks[0]
+      assert(drink.id === 0)
+      assert(drink.name === 'coffee')
     })
   })
 })
