@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { charge } from '../modules/vending-machine'
 import { buyAndCount } from '../modules/buy-and-count'
 import Screen from '../components/Screen'
-import inventorySelector from './selectors/get-inventory'
-import communicationStateSelector from './selectors/get-communication-state'
+import inventorySelector from '../selectors/get-inventory'
+import communicationStateSelector from '../selectors/get-communication-state'
 
 const mapStateToProps = state => ({
   chargedMoney: state.vendingMachine.chargedMoney,
