@@ -1,5 +1,5 @@
-import { buy } from './vending-machine'
-import { sendRequest, receiveResponse } from './network'
+import { buy } from '../modules/vending-machine'
+import { sendRequest, receiveResponse } from '../modules/network'
 
 export const buyAndCount = itemId => dispatch => {
   dispatch(sendRequest())

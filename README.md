@@ -45,8 +45,8 @@ In this repository, codes responds to each roles in clean architecture are follo
 roles in clean architecture | paths
 ---|---
 Entities                | [/modules/domain/src](https://github.com/januswel/vapor-architecture/tree/master/modules/domain/src)
-Use Cases               | [/modules/client/src/modules/buy-and-count](https://github.com/januswel/vapor-architecture/blob/master/modules/client/src/modules/buy-and-count.ts)
-Interface Adaptors      | [/modules/client/src/selectors](https://github.com/januswel/vapor-architecture/tree/master/modules/client/src/selectors), [/modules/client/src/modules/](https://github.com/januswel/vapor-architecture/blob/master/modules/client/src/modules)
+Use Cases               | [/modules/client/src/usecases](https://github.com/januswel/vapor-architecture/blob/master/modules/client/src/usecases)
+Interface Adaptors      | [/modules/client/src/selectors](https://github.com/januswel/vapor-architecture/tree/master/modules/client/src/selectors), [/modules/client/src/modules](https://github.com/januswel/vapor-architecture/blob/master/modules/client/src/modules)
 Frameworks and Drivers  | [/modules/client](https://github.com/januswel/vapor-architecture/tree/master/modules/client), [/modules/server](https://github.com/januswel/vapor-architecture/tree/master/modules/server)
 
 ### DDD
