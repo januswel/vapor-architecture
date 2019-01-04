@@ -19,25 +19,23 @@ export type InventorySeeds = Array<{
   remains: number,
 }>
 
+const factoryFromSeeds = (inventorySeeds: InventorySeeds) =>
+  inventorySeeds.reduce((inventory, { id, drinkId, price, remains }) => {
+    inventory[id] = Item.factory(id, drinkId, price, remains)
+    return inventory
+  }, {})
+
 // initial state
-export const factory = (inventorySeeds?: InventorySeeds): Entity => {
-  const vendingMachine = {
-    inventory:
-      inventorySeeds != null
-        ? inventorySeeds.map(item => Item.factory(item.id, item.drinkId, item.price, item.remains))
-        : Item.repository.getAll(),
-    chargedMoney: 0,
-  }
-  return vendingMachine
-}
+export const factory = (inventorySeeds?: InventorySeeds): Entity => ({
+  inventory: inventorySeeds != null ? factoryFromSeeds(inventorySeeds) : Item.repository.getAll(),
+  chargedMoney: 0,
+})
 
 // update functions
-export const charge = (vendingMachine: Entity, coin: Coin): Entity => {
-  return {
-    ...vendingMachine,
-    chargedMoney: vendingMachine.chargedMoney + coin,
-  }
-}
+export const charge = (vendingMachine: Entity, coin: Coin): Entity => ({
+  ...vendingMachine,
+  chargedMoney: vendingMachine.chargedMoney + coin,
+})
 
 export const buy = (vendingMachine: Entity, itemId: Item.Id): Entity => {
   assert(itemId in vendingMachine.inventory)

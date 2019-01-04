@@ -25,7 +25,8 @@ describe('VendingMachine', () => {
       assert(vendingMachine.inventory[0].price === 120)
       assert(vendingMachine.inventory[0].remains === 10)
     })
-    it('returns VendingMachine', () => {
+
+    it('returns VendingMachine with inventory seeds', () => {
       const vendingMachine = VendingMachine.factory([
         {
           id: 0,

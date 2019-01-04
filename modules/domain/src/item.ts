@@ -15,6 +15,8 @@ export interface Entity {
   remains: Remains;
 }
 
+type All = { [key: string]: Entity }
+
 export const factory = (id: Id, drinkId: Drink.Id, price: Price, remains: Remains) => ({
   id,
   drinkId,
@@ -23,14 +25,14 @@ export const factory = (id: Id, drinkId: Drink.Id, price: Price, remains: Remain
   remains,
 })
 
-const cache = {}
-Object.keys(ITEMS_MASTER).map(id => {
+const cache: All = Object.keys(ITEMS_MASTER).reduce((cache, id) => {
   const item = ITEMS_MASTER[id]
   cache[id] = {
     ...item,
     drink: Drink.repository.getById(item.drinkId),
   }
-})
+  return cache
+}, {})
 
 export const repository = {
   getAll() {
