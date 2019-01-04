@@ -1,7 +1,7 @@
 import { VendingMachine } from 'vapor-domain'
 
 const CHARGE = 'vending-machine/charge'
-const BUY = 'vending-machine/buy'
+const SELL = 'vending-machine/sell'
 
 const initialState = VendingMachine.factory()
 
@@ -9,8 +9,8 @@ export default (state: VendingMachine.Subject = initialState, action) => {
   switch (action.type) {
     case CHARGE:
       return VendingMachine.charge(state, action.payload.chargedMoney)
-    case BUY:
-      return VendingMachine.buy(state, action.payload.itemId)
+    case SELL:
+      return VendingMachine.sell(state, action.payload.itemId)
     default:
       return state
   }
@@ -23,8 +23,8 @@ export const charge = chargedMoney => ({
   },
 })
 
-export const buy = itemId => ({
-  type: BUY,
+export const sell = itemId => ({
+  type: SELL,
   payload: {
     itemId,
   },

@@ -1,17 +1,17 @@
-import { buy } from '../modules/vending-machine'
+import { sell } from '../modules/vending-machine'
 import { sendRequest, receiveResponse } from '../modules/network'
 
-export const buyAndCount = itemId => dispatch => {
+export const sellAndCount = itemId => dispatch => {
   dispatch(sendRequest())
-  const buyAction = buy(itemId)
-  dispatch(buyAction)
+  const sellAction = sell(itemId)
+  dispatch(sellAction)
 
   fetch('http://localhost:3000/items', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
     },
-    body: JSON.stringify(buyAction),
+    body: JSON.stringify(sellAction),
   })
     .then(response => {
       console.log(response)

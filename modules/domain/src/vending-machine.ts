@@ -22,7 +22,7 @@ export const charge = (vendingMachine: Entity, coin: Coin): Entity => ({
   chargedMoney: vendingMachine.chargedMoney + coin,
 })
 
-export const buy = (vendingMachine: Entity, itemId: Item.Id): Entity => {
+export const sell = (vendingMachine: Entity, itemId: Item.Id): Entity => {
   assert(itemId in vendingMachine.inventory)
 
   const selectedItem = vendingMachine.inventory[itemId]

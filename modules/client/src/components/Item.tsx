@@ -42,7 +42,7 @@ export default props => {
   ) : (
     <TouchableOpacity
       onPress={() => {
-        props.actions.buyAndCount(props.index)
+        props.actions.sellAndCount(props.index)
       }}
     >
       <ButtonLabel {...props} />

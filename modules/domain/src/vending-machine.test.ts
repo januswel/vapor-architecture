@@ -31,11 +31,11 @@ describe('VendingMachine', () => {
     })
   })
 
-  describe('buy', () => {
-    it('process buying transactions', () => {
+  describe('sell', () => {
+    it('returns new state after selling transaction', () => {
       const initialState = VendingMachine.factory([0])
       const chargedState = VendingMachine.charge(initialState, 500)
-      const newState = VendingMachine.buy(chargedState, 0)
+      const newState = VendingMachine.sell(chargedState, 0)
       assert(newState.chargedMoney === 380)
       assert(newState.inventory[0].id != null)
       assert(newState.inventory[0].drink.name === 'coffee')
@@ -47,7 +47,7 @@ describe('VendingMachine', () => {
       const initialState = VendingMachine.factory()
       const chargedState = VendingMachine.charge(initialState, 100)
       assert.throws(() => {
-        VendingMachine.buy(chargedState, 0)
+        VendingMachine.sell(chargedState, 0)
       })
     })
 
@@ -55,7 +55,7 @@ describe('VendingMachine', () => {
       const initialState = VendingMachine.factory([3])
       const chargedState = VendingMachine.charge(initialState, 500)
       assert.throws(() => {
-        VendingMachine.buy(chargedState, 0)
+        VendingMachine.sell(chargedState, 0)
       })
     })
   })

@@ -7,7 +7,7 @@ const router = express.Router()
 router.use(bodyParser.urlencoded({ extended: true }))
 router.use(bodyParser.json())
 
-const items = Item.repository.getAll()
+const items = Item.getAll()
 const table = { Item }
 Object.keys(items).forEach(id => {
   const item = items[id]
