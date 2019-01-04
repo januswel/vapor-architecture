@@ -13,8 +13,8 @@
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "@types/jest": "23.3.10",
-    "@types/node": "10.12.12",
+    "@types/jest": "23.3.11",
+    "@types/node": "10.12.18",
     "assert": "1.4.1",
     "jest": "23.6.0",
     "ts-jest": "23.10.5",

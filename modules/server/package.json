@@ -10,8 +10,7 @@
     "prestart": "npm run build",
     "build": "tsc",
     "prebuild": "rm -rf ./dist",
-    "test": "jest",
-    "prepublish": "npm run build"
+    "test": "jest"
   },
   "dependencies": {
     "express": "4.16.4",
@@ -20,7 +19,7 @@
   },
   "devDependencies": {
     "@types/express": "4.16.0",
-    "@types/jest": "23.3.10",
+    "@types/jest": "23.3.11",
     "jest": "23.6.0",
     "ts-jest": "23.10.5",
     "typescript": "3.2.2"
