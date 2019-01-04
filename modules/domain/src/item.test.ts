@@ -4,7 +4,7 @@ import * as Item from './item'
 
 describe('Item', () => {
   describe('factory', () => {
-    it('returns Item', () => {
+    it('returns Entity', () => {
       const item = Item.factory(0, 0, 120, 2)
       assert(item.id === 0)
       assert(item.drinkId === 0)
@@ -15,7 +15,7 @@ describe('Item', () => {
   })
 
   describe('getById', () => {
-    it('returns item specified by id', () => {
+    it('returns Entity specified by id', () => {
       const item = Item.getById(0)
       assert(item.id === 0)
       assert(item.drinkId === 0)
@@ -31,9 +31,9 @@ describe('Item', () => {
   })
 
   describe('getAll', () => {
-    it('returns all items', () => {
+    it('returns all entities', () => {
       const items = Item.getAll()
-      assert(Object.keys(items).length === 3)
+      assert(Object.keys(items).length === 4)
       const item = items[0]
       assert(item.id === 0)
       assert(item.drinkId === 0)

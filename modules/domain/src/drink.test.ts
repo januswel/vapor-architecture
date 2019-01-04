@@ -4,7 +4,7 @@ import * as Drink from './drink'
 
 describe('Drink', () => {
   describe('getById', () => {
-    it('returns Drink', () => {
+    it('returns Entity', () => {
       const drink = Drink.getById(0)
       assert(drink.id === 0)
       assert(drink.name === 'coffee')

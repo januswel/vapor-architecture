@@ -2,20 +2,7 @@ import * as assert from 'assert'
 
 import * as Inventory from './inventory'
 
-const seeds = [
-  {
-    id: 0,
-    drinkId: 0,
-    price: 120,
-    remains: 1,
-  },
-  {
-    id: 1,
-    drinkId: 1,
-    price: 100,
-    remains: 0,
-  },
-]
+const seeds = [0, 1]
 
 describe('Inventory', () => {
   describe('factory', () => {
@@ -27,7 +14,7 @@ describe('Inventory', () => {
       assert(inventory[0].drink.id === 0)
       assert(inventory[0].drink.name === 'coffee')
       assert(inventory[0].price === 120)
-      assert(inventory[0].remains === 1)
+      assert(inventory[0].remains === 10)
     })
   })
 })

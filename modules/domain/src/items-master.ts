@@ -19,6 +19,12 @@ const ITEMS_MASTER = {
     price: 120,
     remains: 1,
   },
+  3: {
+    id: 3,
+    drinkId: 0,
+    price: 120,
+    remains: 0,
+  },
 }
 
 deepFreeze(ITEMS_MASTER)

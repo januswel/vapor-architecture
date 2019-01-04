@@ -5,16 +5,11 @@ export interface Entity {
   [id: string]: Item.Entity;
 }
 
-export type Seeds = Array<{
-  id: Item.Id,
-  drinkId: Drink.Id,
-  price: number,
-  remains: number,
-}>
+export type Seeds = Array<Item.Id>
 
 // Factory
 export const factory = (seeds: Seeds) =>
-  seeds.reduce((inventory, { id, drinkId, price, remains }) => {
-    inventory[id] = Item.factory(id, drinkId, price, remains)
+  seeds.reduce((inventory, itemId) => {
+    inventory[itemId] = Item.getById(itemId)
     return inventory
   }, {})
