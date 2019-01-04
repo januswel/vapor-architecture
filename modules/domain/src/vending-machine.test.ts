@@ -2,19 +2,6 @@ import * as assert from 'assert'
 
 import * as VendingMachine from './vending-machine'
 
-const inventory = [
-  {
-    drinkId: 0,
-    price: 120,
-    remains: 1,
-  },
-  {
-    drinkId: 1,
-    price: 100,
-    remains: 0,
-  },
-]
-
 describe('VendingMachine', () => {
   describe('factory', () => {
     it('returns VendingMachine', () => {

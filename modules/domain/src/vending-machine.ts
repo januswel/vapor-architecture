@@ -2,32 +2,17 @@ import * as assert from 'assert'
 
 import * as Drink from './drink'
 import * as Item from './item'
+import * as Inventory from './inventory'
 import { Coin } from './coin'
 
-interface Inventory {
-  [id: string]: Item.Entity;
-}
 export interface Entity {
-  inventory: Array<Item.Entity>;
+  inventory: Inventory.Entity;
   chargedMoney: number;
 }
 
-export type InventorySeeds = Array<{
-  id: Item.Id,
-  drinkId: Drink.Id,
-  price: number,
-  remains: number,
-}>
-
 // Factory
-const factoryFromSeeds = (inventorySeeds: InventorySeeds) =>
-  inventorySeeds.reduce((inventory, { id, drinkId, price, remains }) => {
-    inventory[id] = Item.factory(id, drinkId, price, remains)
-    return inventory
-  }, {})
-
-export const factory = (inventorySeeds?: InventorySeeds): Entity => ({
-  inventory: inventorySeeds != null ? factoryFromSeeds(inventorySeeds) : Item.getAll(),
+export const factory = (inventorySeeds?: Inventory.Seeds): Entity => ({
+  inventory: inventorySeeds != null ? Inventory.factory(inventorySeeds) : Item.getAll(),
   chargedMoney: 0,
 })
 
