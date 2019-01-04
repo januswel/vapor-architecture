@@ -5,7 +5,7 @@ import * as Item from './item'
 import { Coin } from './coin'
 
 interface Inventory {
-  (id: string): Item.Entity;
+  [id: string]: Item.Entity;
 }
 export interface Entity {
   inventory: Array<Item.Entity>;
@@ -19,19 +19,19 @@ export type InventorySeeds = Array<{
   remains: number,
 }>
 
+// Factory
 const factoryFromSeeds = (inventorySeeds: InventorySeeds) =>
   inventorySeeds.reduce((inventory, { id, drinkId, price, remains }) => {
     inventory[id] = Item.factory(id, drinkId, price, remains)
     return inventory
   }, {})
 
-// initial state
 export const factory = (inventorySeeds?: InventorySeeds): Entity => ({
-  inventory: inventorySeeds != null ? factoryFromSeeds(inventorySeeds) : Item.repository.getAll(),
+  inventory: inventorySeeds != null ? factoryFromSeeds(inventorySeeds) : Item.getAll(),
   chargedMoney: 0,
 })
 
-// update functions
+// Behaviors
 export const charge = (vendingMachine: Entity, coin: Coin): Entity => ({
   ...vendingMachine,
   chargedMoney: vendingMachine.chargedMoney + coin,

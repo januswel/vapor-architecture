@@ -11,12 +11,10 @@ export interface Entity {
   imageUrl: string;
 }
 
-export const repository = {
-  getAll() {
-    return deepCopy(DRINKS_MASTER)
-  },
-  getById(id: Id) {
-    assert(id in DRINKS_MASTER, `id ${id} is not exists`)
-    return deepCopy(DRINKS_MASTER[id])
-  },
+// Repository
+export const getAll = () => deepCopy(DRINKS_MASTER)
+
+export const getById = (id: Id) => {
+  assert(id in DRINKS_MASTER, `id ${id} is not exists`)
+  return deepCopy(DRINKS_MASTER[id])
 }

@@ -15,31 +15,30 @@ export interface Entity {
   remains: Remains;
 }
 
-type All = { [key: string]: Entity }
+type List = { [id: string]: Entity }
 
+// Factory
 export const factory = (id: Id, drinkId: Drink.Id, price: Price, remains: Remains) => ({
   id,
   drinkId,
-  drink: Drink.repository.getById(drinkId),
+  drink: Drink.getById(drinkId),
   price,
   remains,
 })
 
-const cache: All = Object.keys(ITEMS_MASTER).reduce((cache, id) => {
+// Repository
+const cache: List = Object.keys(ITEMS_MASTER).reduce((cache, id) => {
   const item = ITEMS_MASTER[id]
   cache[id] = {
     ...item,
-    drink: Drink.repository.getById(item.drinkId),
+    drink: Drink.getById(item.drinkId),
   }
   return cache
 }, {})
 
-export const repository = {
-  getAll() {
-    return deepCopy(cache)
-  },
-  getById(id: Id) {
-    assert(id in cache, `id ${id} is not exists`)
-    return deepCopy(cache[id])
-  },
+export const getAll = () => deepCopy(cache)
+
+export const getById = (id: Id) => {
+  assert(id in cache, `id ${id} is not exists`)
+  return deepCopy(cache[id])
 }
