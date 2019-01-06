@@ -18,7 +18,6 @@ describe('Item', () => {
     it('returns Entity specified by id', () => {
       const item = Item.getById(0)
       assert(item.id === 0)
-      assert(item.drinkId === 0)
       assert(item.drink.name === 'coffee')
       assert(item.price === 120)
       assert(item.remains === 10)
@@ -36,7 +35,6 @@ describe('Item', () => {
       assert(Object.keys(items).length === 4)
       const item = items[0]
       assert(item.id === 0)
-      assert(item.drinkId === 0)
       assert(item.drink.name === 'coffee')
       assert(item.price === 120)
       assert(item.remains === 10)

@@ -10,7 +10,6 @@ describe('Inventory', () => {
       const inventory = Inventory.factory(seeds)
       assert(Object.keys(inventory).length === 2)
       assert(inventory[0].id === 0)
-      assert(inventory[0].drinkId === 0)
       assert(inventory[0].drink.id === 0)
       assert(inventory[0].drink.name === 'coffee')
       assert(inventory[0].price === 120)

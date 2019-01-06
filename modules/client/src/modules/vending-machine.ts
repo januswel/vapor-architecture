@@ -1,4 +1,4 @@
-import { VendingMachine } from 'vapor-domain'
+import { VendingMachine } from '@januswel/domain'
 
 const CHARGE = 'vending-machine/charge'
 const SELL = 'vending-machine/sell'

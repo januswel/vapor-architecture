@@ -1,5 +1,5 @@
 {
-  "name": "vapor",
+  "name": "@januswel/client",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -13,7 +13,7 @@
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",
     "reselect": "4.0.0",
-    "vapor-domain": "1.0.0"
+    "@januswel/domain": "1.0.0"
   },
   "devDependencies": {
     "assert": "1.4.1",

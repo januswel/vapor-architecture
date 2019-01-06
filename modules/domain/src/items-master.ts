@@ -1,6 +1,13 @@
-import deepFreeze from './util/deep-freeze'
+interface ItemsMaster {
+  readonly [id: string]: {
+    readonly id: number
+    readonly drinkId: number
+    readonly price: number
+    readonly remains: number
+  }
+}
 
-const ITEMS_MASTER = {
+const ITEMS_MASTER: ItemsMaster = {
   0: {
     id: 0,
     drinkId: 0,
@@ -26,7 +33,5 @@ const ITEMS_MASTER = {
     remains: 0,
   },
 }
-
-deepFreeze(ITEMS_MASTER)
 
 export default ITEMS_MASTER

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "./modules",
+    "strict": true,
     "paths": {
       "@januswel/*": ["./*/src"]
     }

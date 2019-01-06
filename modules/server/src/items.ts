@@ -1,14 +1,14 @@
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
 
-import { Item } from 'vapor-domain'
+import { Item } from '@januswel/domain'
 
 const router = express.Router()
 router.use(bodyParser.urlencoded({ extended: true }))
 router.use(bodyParser.json())
 
 const items = Item.getAll()
-const table = { Item }
+const table: { [id: string]: any } = {}
 Object.keys(items).forEach(id => {
   const item = items[id]
   table[id] = {

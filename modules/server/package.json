@@ -1,5 +1,5 @@
 {
-  "name": "vapor-server",
+  "name": "@januswel/server",
   "version": "1.0.0",
   "description": "server",
   "author": "Takagi Kensuke <janus.wel.3@gmail.com>",
@@ -15,7 +15,7 @@
   "dependencies": {
     "express": "4.16.4",
     "body-parser": "1.18.3",
-    "vapor-domain": "1.0.0"
+    "@januswel/domain": "1.0.0"
   },
   "devDependencies": {
     "@types/express": "4.16.0",

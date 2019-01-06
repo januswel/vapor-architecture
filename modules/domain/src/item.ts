@@ -1,6 +1,5 @@
 import * as assert from 'assert'
 
-import deepFreeze from './util/deep-freeze'
 import * as Drink from './drink'
 import ITEMS_MASTER from './items-master'
 
@@ -15,6 +14,7 @@ export interface Entity {
   readonly remains: Remains
 }
 
+type MutableList = { [id: string]: Entity }
 type List = { readonly [id: string]: Entity }
 
 // Factory
@@ -27,16 +27,14 @@ export const factory = (id: Id, drinkId: Drink.Id, price: Price, remains: Remain
 })
 
 // Repository
-const entities: List = deepFreeze(
-  Object.keys(ITEMS_MASTER).reduce((entities, id) => {
-    const item = ITEMS_MASTER[id]
-    entities[id] = {
-      ...item,
-      drink: Drink.getById(item.drinkId),
-    }
-    return entities
-  }, {}),
-)
+const entities: List = Object.keys(ITEMS_MASTER).reduce((entities: MutableList, id) => {
+  const item = ITEMS_MASTER[id]
+  entities[id] = {
+    ...item,
+    drink: Drink.getById(item.drinkId),
+  }
+  return entities
+}, {})
 
 export const getAll = () => entities
 

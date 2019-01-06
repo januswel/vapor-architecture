@@ -9,6 +9,9 @@ export interface Entity {
   readonly name: string
   readonly imageUrl: string
 }
+export interface List {
+  readonly [id: string]: Entity
+}
 
 // Repository
 export const getAll = () => DRINKS_MASTER

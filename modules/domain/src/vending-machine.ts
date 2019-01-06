@@ -1,6 +1,5 @@
 import * as assert from 'assert'
 
-import deepFreeze from './util/deep-freeze'
 import * as Drink from './drink'
 import * as Item from './item'
 import * as Inventory from './inventory'
@@ -12,11 +11,10 @@ export interface Entity {
 }
 
 // Factory
-export const factory = (inventorySeeds?: Inventory.Seeds): Entity =>
-  deepFreeze({
-    inventory: inventorySeeds != null ? Inventory.factory(inventorySeeds) : Item.getAll(),
-    chargedMoney: 0,
-  })
+export const factory = (inventorySeeds?: Inventory.Seeds): Entity => ({
+  inventory: inventorySeeds != null ? Inventory.factory(inventorySeeds) : Item.getAll(),
+  chargedMoney: 0,
+})
 
 // Behaviors
 export const charge = (vendingMachine: Entity, coin: Coin): Entity => ({

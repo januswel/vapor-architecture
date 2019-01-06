@@ -1,6 +1,6 @@
-import deepFreeze from './util/deep-freeze'
+import * as Drink from './drink'
 
-const DRINKS_MASTER = {
+const DRINKS_MASTER: Drink.List = {
   0: {
     id: 0,
     name: 'coffee',
@@ -17,7 +17,5 @@ const DRINKS_MASTER = {
     imageUrl: 'http://localhost:3000/images/soda.png',
   },
 }
-
-deepFreeze(DRINKS_MASTER)
 
 export default DRINKS_MASTER

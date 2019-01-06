@@ -1,5 +1,5 @@
 {
-  "name": "vapor-domain",
+  "name": "@januswel/domain",
   "version": "1.0.0",
   "description": "domain",
   "main": "dist/index.js",
