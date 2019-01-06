@@ -1,5 +1,6 @@
 // https://github.com/substack/deep-freeze
-export default function deepFreeze(target: Object) {
+
+const deepFreeze = <T>(target: Object) => {
   Object.freeze(target)
   for (const key in target) {
     if (
@@ -8,9 +9,11 @@ export default function deepFreeze(target: Object) {
       (typeof target[key] === 'object' || typeof target[key] === 'function') &&
       !Object.isFrozen(target[key])
     ) {
-      deepFreeze(target[key])
+      deepFreeze<T>(target[key])
     }
   }
 
-  return target
+  return target as T
 }
+
+export default deepFreeze
