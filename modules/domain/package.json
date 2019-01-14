@@ -13,7 +13,7 @@
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "@types/jest": "23.3.11",
+    "@types/jest": "23.3.12",
     "@types/node": "10.12.18",
     "assert": "1.4.1",
     "jest": "23.6.0",
