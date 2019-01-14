@@ -8,8 +8,8 @@ import communicationStateSelector from '../selectors/get-communication-state'
 
 const mapStateToProps = state => ({
   chargedMoney: state.vendingMachine.chargedMoney,
-  inventory: inventorySelector(state.vendingMachine),
-  isCommunicating: communicationStateSelector(state.network),
+  inventory: inventorySelector(state),
+  isCommunicating: communicationStateSelector(state),
 })
 
 const mapDispatchToProps = dispatch => ({

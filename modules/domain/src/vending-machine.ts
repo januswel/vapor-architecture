@@ -2,7 +2,7 @@ import * as assert from 'assert'
 
 import * as Item from './item'
 import * as Inventory from './inventory'
-import { Coin } from './coin'
+import * as Coin from './coin'
 
 export interface Entity {
   readonly inventory: Inventory.Entity
@@ -16,7 +16,7 @@ export const factory = (inventorySeeds?: Inventory.Seeds): Entity => ({
 })
 
 // Behaviors
-export const charge = (vendingMachine: Entity, coin: Coin): Entity => ({
+export const charge = (vendingMachine: Entity, coin: Coin.Entity): Entity => ({
   ...vendingMachine,
   chargedMoney: vendingMachine.chargedMoney + coin,
 })

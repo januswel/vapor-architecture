@@ -1,1 +1,1 @@
-export type Coin = 10 | 50 | 100 | 500
+export type Entity = 10 | 50 | 100 | 500
