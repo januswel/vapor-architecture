@@ -1,4 +1,3 @@
-import * as Drink from './drink'
 import * as Item from './item'
 
 interface MutableEntity {

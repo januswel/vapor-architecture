@@ -1,6 +1,5 @@
 import * as assert from 'assert'
 
-import * as Drink from './drink'
 import * as Item from './item'
 import * as Inventory from './inventory'
 import { Coin } from './coin'
