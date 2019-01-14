@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 const styles = StyleSheet.create({
@@ -15,7 +15,14 @@ const styles = StyleSheet.create({
   },
 })
 
-export default props => (
+export interface Actions {
+  charge: (price: number) => void
+}
+export interface Props {
+  price: number
+  actions: Actions
+}
+export default (props: Props) => (
   <TouchableOpacity
     onPress={() => {
       props.actions.charge(props.price)

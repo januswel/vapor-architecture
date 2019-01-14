@@ -6,7 +6,7 @@ const app = express()
 app.use(express.static('public'))
 app.use('/items', items)
 
-app.get('/', function(req, res) {
+app.get('/', function(_, res) {
   res.send('Hello World')
 })
 

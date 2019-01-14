@@ -1,18 +1,26 @@
+import { DefineAction, DefineState } from './util'
+
 const SEND_REQUEST = 'network/send-request'
 const RECEIVE_RESPONSE = 'network/receive-request'
 
-type State = number
-type Action = {
-  type: string,
+export type Action = DefineAction<typeof SEND_REQUEST> | DefineAction<typeof RECEIVE_RESPONSE>
+
+const initialState = {
+  numofWaitings: 0,
 }
-const initialState = 0
+
+export type State = DefineState<typeof initialState>
 
 export default (state: State = initialState, action: Action) => {
   switch (action.type) {
     case SEND_REQUEST:
-      return state + 1
+      return {
+        numofWaitings: state.numofWaitings + 1,
+      }
     case RECEIVE_RESPONSE:
-      return state - 1
+      return {
+        numofWaitings: state.numofWaitings - 1,
+      }
     default:
       return state
   }

@@ -1,7 +1,9 @@
+import { Dispatch } from 'redux'
+
 import { sell } from '../modules/vending-machine'
 import { sendRequest, receiveResponse } from '../modules/network'
 
-export const sellAndCount = itemId => dispatch => {
+export const sellAndCount = (itemId: number) => (dispatch: Dispatch) => {
   dispatch(sendRequest())
   const sellAction = sell(itemId)
   dispatch(sellAction)

@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
   res.status(200).end()
 })
 
-router.get('/', (req, res) => {
+router.get('/', (_, res) => {
   res.json(JSON.stringify(table))
 })
 

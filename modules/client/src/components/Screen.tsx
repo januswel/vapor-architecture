@@ -1,9 +1,9 @@
-import React from 'react'
-import { SafeAreaView, StyleSheet, Text } from 'react-native'
+import * as React from 'react'
+import { SafeAreaView, StyleSheet } from 'react-native'
 import NetworkIndicator from './NetworkIndicator'
 
-import Charger from './Charger'
-import Inventory from './Inventory'
+import Charger, { ChargedMoney, Actions as ChargerActions } from './Charger'
+import Inventory, { Inventory as InventoryType, Actions as InventoryActions } from './Inventory'
 
 const styles = StyleSheet.create({
   container: {
@@ -11,17 +11,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#F5FCFF',
   },
-  indicator: {
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-  },
 })
 
-export default props => (
+export type Actions = ChargerActions & InventoryActions
+export interface Props {
+  inventory: InventoryType
+  chargedMoney: ChargedMoney
+  isCommunicating: boolean
+  actions: Actions
+}
+export default (props: Props) => (
   <SafeAreaView style={styles.container}>
     <Charger {...props} />
     <Inventory {...props} />
-    {props.isCommunicating ? <NetworkIndicator style={styles.indicator} /> : null}
+    {props.isCommunicating ? <NetworkIndicator /> : null}
   </SafeAreaView>
 )

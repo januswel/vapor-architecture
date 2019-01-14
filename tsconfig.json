@@ -1,7 +1,21 @@
 {
   "compilerOptions": {
-    "baseUrl": "./modules",
+    "charset": "utf8",
+    "newLine": "LF",
+    "target": "es2018",
+    "module": "commonjs",
+    "declaration": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "outDir": "dist",
     "strict": true,
+    "noErrorTruncation": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./modules",
     "paths": {
       "@januswel/*": ["./*/src"]
     }
