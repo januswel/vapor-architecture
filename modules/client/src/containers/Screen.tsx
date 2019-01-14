@@ -1,23 +1,26 @@
 import { connect } from 'react-redux'
+import { Dispatch } from 'redux'
+import { Coin } from '@januswel/domain'
 
 import { charge } from '../modules/vending-machine'
 import { sellAndCount } from '../usecases/vending-machine'
 import Screen from '../components/Screen'
-import inventorySelector from '../selectors/get-inventory'
-import communicationStateSelector from '../selectors/get-communication-state'
+import getInventory from '../selectors/get-inventory'
+import isWating from '../selectors/is-waiting'
+import { AppState } from '../store'
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppState) => ({
   chargedMoney: state.vendingMachine.chargedMoney,
-  inventory: inventorySelector(state),
-  isCommunicating: communicationStateSelector(state),
+  inventory: getInventory(state),
+  isCommunicating: isWating(state),
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   actions: {
-    charge: chargedMoney => {
+    charge: (chargedMoney: Coin.Entity) => {
       dispatch(charge(chargedMoney))
     },
-    sellAndCount: itemId => {
+    sellAndCount: (itemId: number) => {
       dispatch(sellAndCount(itemId))
     },
   },

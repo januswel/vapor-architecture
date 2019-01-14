@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux'
-import vendingMachineReducer from './vending-machine'
-import networkReducer from './network'
+import vendingMachineReducer, { State as VendingMachineState } from './vending-machine'
+import networkReducer, { State as NetworkState } from './network'
 
-export default combineReducers({
+export interface AppState {
+  vendingMachine: VendingMachineState
+  network: NetworkState
+}
+
+export default combineReducers<AppState>({
   vendingMachine: vendingMachineReducer,
   network: networkReducer,
 })

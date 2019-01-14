@@ -1,25 +1,17 @@
 import { Coin, VendingMachine } from '@januswel/domain'
 
+import { DefineAction, DefineState } from './util'
+
 const CHARGE = 'vending-machine/charge'
 const SELL = 'vending-machine/sell'
 
+type Action = DefineAction<typeof CHARGE, { chargedMoney: Coin.Entity }> | DefineAction<typeof SELL, { itemId: number }>
+
 const initialState = VendingMachine.factory()
 
-type Action =
-  | {
-      type: 'vending-machine/charge'
-      payload: {
-        chargedMoney: Coin.Entity
-      }
-    }
-  | {
-      type: 'vending-machine/sell'
-      payload: {
-        itemId: number
-      }
-    }
+export type State = DefineState<typeof initialState>
 
-export default (state: VendingMachine.Entity = initialState, action: Action) => {
+export default (state: State = initialState, action: Action) => {
   switch (action.type) {
     case CHARGE:
       return VendingMachine.charge(state, action.payload.chargedMoney)
