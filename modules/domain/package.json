@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "domain",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "author": "Takagi Kensuke <janus.wel.3@gmail.com>",
   "license": "MIT",
   "private": true,
@@ -13,6 +14,7 @@
     "prepare": "npm run build"
   },
   "devDependencies": {
+    "@babel/runtime": "7.2.0",
     "@types/jest": "23.3.12",
     "@types/node": "10.12.18",
     "assert": "1.4.1",

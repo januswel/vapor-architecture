@@ -1,42 +1,15 @@
-import React from 'react'
-import { Image, View, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import * as React from 'react'
+import { TouchableOpacity } from 'react-native'
 
-const styles = StyleSheet.create({
-  container: {
-    width: 168,
-    height: 168,
-    margin: 16,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-  },
-  thumbnail: {
-    width: 96,
-    height: 96,
-  },
-  price: {
-    fontSize: 16,
-  },
-})
+import ButtonLabel, { Props as ButtonLabelProps } from './ButtonLabel'
 
-const soldOutStyle = {
-  backgroundColor: 'red',
+export interface Props extends ButtonLabelProps {
+  index: number
+  actions: {
+    sellAndCount: (id: number) => void
+  }
 }
-const tooFewChargedMoneyStyle = {
-  backgroundColor: 'gray',
-}
-
-const ButtonLabel = props => {
-  const backgroundStyle = props.isSoldOut ? soldOutStyle : props.isTooFewChargedMoney ? tooFewChargedMoneyStyle : {}
-
-  return (
-    <View style={[styles.container, backgroundStyle]}>
-      <Image style={styles.thumbnail} source={{ uri: props.drink.imageUrl }} resizeMode="contain" />
-      <Text style={styles.price}>¥{props.price}</Text>
-    </View>
-  )
-}
-
-export default props => {
+export default (props: Props) => {
   return props.isSoldOut || props.isTooFewChargedMoney ? (
     <ButtonLabel {...props} />
   ) : (

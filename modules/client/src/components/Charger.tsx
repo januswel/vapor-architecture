@@ -1,10 +1,9 @@
-import React from 'react'
+import * as React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-import Coin from './Coin'
+import Coin, { Props as CoinProps } from './Coin'
 
 const styles = StyleSheet.create({
-  cointainer: {},
   label: {
     fontSize: 32,
     backgroundColor: 'black',
@@ -20,16 +19,18 @@ const styles = StyleSheet.create({
   },
 })
 
-export default props => (
-  <View style={styles.container}>
-    <View style={styles.chargedMoney}>
-      <Text style={styles.label}>¥ {props.chargedMoney}</Text>
-    </View>
+export interface Props extends CoinProps {
+  chargedMoney: number
+}
+
+export default (props: Props) => (
+  <>
+    <Text style={styles.label}>¥ {props.chargedMoney}</Text>
     <View style={styles.coins}>
       <Coin {...props} price={10} />
       <Coin {...props} price={50} />
       <Coin {...props} price={100} />
       <Coin {...props} price={500} />
     </View>
-  </View>
+  </>
 )

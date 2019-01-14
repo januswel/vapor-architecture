@@ -16,12 +16,17 @@
     "@januswel/domain": "1.0.0"
   },
   "devDependencies": {
+    "@types/jest": "23.3.12",
+    "@types/react": "16.7.18",
+    "@types/react-native": "0.57.27",
+    "@types/react-redux": "6.0.12",
     "assert": "1.4.1",
     "babel-jest": "23.6.0",
     "get-dev-paths": "0.1.1",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.51.1",
-    "react-test-renderer": "16.7.0"
+    "react-test-renderer": "16.7.0",
+    "typescript": "3.2.2"
   },
   "jest": {
     "preset": "react-native"
