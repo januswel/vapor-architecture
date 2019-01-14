@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { FlatList, StyleSheet } from 'react-native'
 
-import Item, { Props as ItemProps } from './Item'
+import Item, { Props as ItemProps, Actions as ItemActions } from './Item'
 
 const styles = StyleSheet.create({
   container: {
@@ -9,9 +9,12 @@ const styles = StyleSheet.create({
   },
 })
 
-export interface Props extends ItemProps {
-  inventory: Array<ItemProps>
+export type Inventory = Array<ItemProps>
+export type Actions = ItemActions
+export interface Props {
+  inventory: Inventory
   chargedMoney: number
+  actions: Actions
 }
 export default (props: Props) => (
   <FlatList

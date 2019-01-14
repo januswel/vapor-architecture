@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
-import { Item } from '@januswel/domain'
-
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
@@ -17,10 +15,12 @@ const styles = StyleSheet.create({
   },
 })
 
-export interface Props extends Item.Entity {
-  actions: {
-    charge: (price: number) => void
-  }
+export interface Actions {
+  charge: (price: number) => void
+}
+export interface Props {
+  price: number
+  actions: Actions
 }
 export default (props: Props) => (
   <TouchableOpacity

@@ -5,7 +5,9 @@ import { DefineAction, DefineState } from './util'
 const CHARGE = 'vending-machine/charge'
 const SELL = 'vending-machine/sell'
 
-type Action = DefineAction<typeof CHARGE, { chargedMoney: Coin.Entity }> | DefineAction<typeof SELL, { itemId: number }>
+export type Action =
+  | DefineAction<typeof CHARGE, { chargedMoney: Coin.Entity }>
+  | DefineAction<typeof SELL, { itemId: number }>
 
 const initialState = VendingMachine.factory()
 

@@ -3,8 +3,8 @@ import vendingMachineReducer, { State as VendingMachineState } from './vending-m
 import networkReducer, { State as NetworkState } from './network'
 
 export interface AppState {
-  vendingMachine: VendingMachineState
-  network: NetworkState
+  readonly vendingMachine: VendingMachineState
+  readonly network: NetworkState
 }
 
 export default combineReducers<AppState>({

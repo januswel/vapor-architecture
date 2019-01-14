@@ -3,7 +3,9 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-    "jsx": "react"
+    "jsx": "react",
+    "strictFunctionTypes": false
   },
-  "references": [{ "path": "../domain" }]
+  "references": [{ "path": "../domain" }],
+  "exclude": ["dist", "node_modules", "**/*.test.ts"]
 }

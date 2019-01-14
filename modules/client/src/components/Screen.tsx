@@ -2,8 +2,8 @@ import * as React from 'react'
 import { SafeAreaView, StyleSheet } from 'react-native'
 import NetworkIndicator from './NetworkIndicator'
 
-import Charger, { Props as ChargerProps } from './Charger'
-import Inventory, { Props as InventoryProps } from './Inventory'
+import Charger, { ChargedMoney, Actions as ChargerActions } from './Charger'
+import Inventory, { Inventory as InventoryType, Actions as InventoryActions } from './Inventory'
 
 const styles = StyleSheet.create({
   container: {
@@ -13,12 +13,12 @@ const styles = StyleSheet.create({
   },
 })
 
-interface Props extends ChargerProps, InventoryProps {
+export type Actions = ChargerActions & InventoryActions
+export interface Props {
+  inventory: InventoryType
+  chargedMoney: ChargedMoney
   isCommunicating: boolean
-  actions: {
-    sellAndCount: (index: number) => void
-    charge: (price: number) => void
-  }
+  actions: Actions
 }
 export default (props: Props) => (
   <SafeAreaView style={styles.container}>
