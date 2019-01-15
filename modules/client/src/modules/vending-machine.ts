@@ -25,14 +25,14 @@ export default (state: State = initialState, action: Action) => {
 }
 
 export const charge = (chargedMoney: Coin.Entity) => ({
-  type: CHARGE,
+  type: CHARGE as typeof CHARGE,
   payload: {
     chargedMoney,
   },
 })
 
 export const sell = (itemId: number) => ({
-  type: SELL,
+  type: SELL as typeof SELL,
   payload: {
     itemId,
   },
