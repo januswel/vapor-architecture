@@ -1,7 +1,7 @@
 import { DefineAction, DefineState } from './util'
 
-const SEND_REQUEST = 'network/send-request'
-const RECEIVE_RESPONSE = 'network/receive-request'
+export const SEND_REQUEST = 'network/send-request'
+export const RECEIVE_RESPONSE = 'network/receive-request'
 
 export type Action = DefineAction<typeof SEND_REQUEST> | DefineAction<typeof RECEIVE_RESPONSE>
 
@@ -27,8 +27,8 @@ export default (state: State = initialState, action: Action) => {
 }
 
 export const sendRequest = () => ({
-  type: SEND_REQUEST,
+  type: SEND_REQUEST as typeof SEND_REQUEST,
 })
 export const receiveResponse = () => ({
-  type: RECEIVE_RESPONSE,
+  type: RECEIVE_RESPONSE as typeof RECEIVE_RESPONSE,
 })

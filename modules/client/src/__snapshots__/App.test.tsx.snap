@@ -1,0 +1,469 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+<RCTSafeAreaView
+  style={
+    Object {
+      "backgroundColor": "#F5FCFF",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "black",
+        "color": "orange",
+        "fontSize": 32,
+        "margin": 8,
+        "padding": 16,
+        "textAlign": "right",
+      }
+    }
+  >
+    ¥ 
+    0
+  </Text>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "silver",
+            "borderRadius": 48,
+            "height": 96,
+            "justifyContent": "center",
+            "width": 96,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 32,
+            }
+          }
+        >
+          10
+        </Text>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "silver",
+            "borderRadius": 48,
+            "height": 96,
+            "justifyContent": "center",
+            "width": 96,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 32,
+            }
+          }
+        >
+          50
+        </Text>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "silver",
+            "borderRadius": 48,
+            "height": 96,
+            "justifyContent": "center",
+            "width": 96,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 32,
+            }
+          }
+        >
+          100
+        </Text>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "silver",
+            "borderRadius": 48,
+            "height": 96,
+            "justifyContent": "center",
+            "width": 96,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 32,
+            }
+          }
+        >
+          500
+        </Text>
+      </View>
+    </View>
+  </View>
+  <RCTScrollView
+    data={
+      Array [
+        Object {
+          "drink": Object {
+            "id": 0,
+            "imageUrl": "http://localhost:3000/images/coffee.png",
+            "name": "coffee",
+          },
+          "drinkId": 0,
+          "id": 0,
+          "isSoldOut": false,
+          "isTooFewChargedMoney": true,
+          "price": 120,
+          "remains": 10,
+        },
+        Object {
+          "drink": Object {
+            "id": 1,
+            "imageUrl": "http://localhost:3000/images/water.png",
+            "name": "water",
+          },
+          "drinkId": 1,
+          "id": 1,
+          "isSoldOut": false,
+          "isTooFewChargedMoney": true,
+          "price": 100,
+          "remains": 10,
+        },
+        Object {
+          "drink": Object {
+            "id": 2,
+            "imageUrl": "http://localhost:3000/images/soda.png",
+            "name": "soda",
+          },
+          "drinkId": 2,
+          "id": 2,
+          "isSoldOut": false,
+          "isTooFewChargedMoney": true,
+          "price": 120,
+          "remains": 1,
+        },
+        Object {
+          "drink": Object {
+            "id": 0,
+            "imageUrl": "http://localhost:3000/images/coffee.png",
+            "name": "coffee",
+          },
+          "drinkId": 0,
+          "id": 3,
+          "isSoldOut": true,
+          "isTooFewChargedMoney": true,
+          "price": 120,
+          "remains": 0,
+        },
+      ]
+    }
+    disableVirtualization={false}
+    extraData={0}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "marginTop": 16,
+      }
+    }
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": 168,
+                  "justifyContent": "space-around",
+                  "margin": 16,
+                  "width": 168,
+                },
+                Object {
+                  "backgroundColor": "gray",
+                },
+              ]
+            }
+          >
+            <Image
+              resizeMode="contain"
+              source={
+                Object {
+                  "uri": "http://localhost:3000/images/coffee.png",
+                }
+              }
+              style={
+                Object {
+                  "height": 96,
+                  "width": 96,
+                }
+              }
+            />
+            <Text
+              style={
+                Object {
+                  "fontSize": 16,
+                }
+              }
+            >
+              ¥
+              120
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": 168,
+                  "justifyContent": "space-around",
+                  "margin": 16,
+                  "width": 168,
+                },
+                Object {
+                  "backgroundColor": "gray",
+                },
+              ]
+            }
+          >
+            <Image
+              resizeMode="contain"
+              source={
+                Object {
+                  "uri": "http://localhost:3000/images/water.png",
+                }
+              }
+              style={
+                Object {
+                  "height": 96,
+                  "width": 96,
+                }
+              }
+            />
+            <Text
+              style={
+                Object {
+                  "fontSize": 16,
+                }
+              }
+            >
+              ¥
+              100
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": 168,
+                  "justifyContent": "space-around",
+                  "margin": 16,
+                  "width": 168,
+                },
+                Object {
+                  "backgroundColor": "gray",
+                },
+              ]
+            }
+          >
+            <Image
+              resizeMode="contain"
+              source={
+                Object {
+                  "uri": "http://localhost:3000/images/soda.png",
+                }
+              }
+              style={
+                Object {
+                  "height": 96,
+                  "width": 96,
+                }
+              }
+            />
+            <Text
+              style={
+                Object {
+                  "fontSize": 16,
+                }
+              }
+            >
+              ¥
+              120
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": 168,
+                  "justifyContent": "space-around",
+                  "margin": 16,
+                  "width": 168,
+                },
+                Object {
+                  "backgroundColor": "red",
+                },
+              ]
+            }
+          >
+            <Image
+              resizeMode="contain"
+              source={
+                Object {
+                  "uri": "http://localhost:3000/images/coffee.png",
+                }
+              }
+              style={
+                Object {
+                  "height": 96,
+                  "width": 96,
+                }
+              }
+            />
+            <Text
+              style={
+                Object {
+                  "fontSize": 16,
+                }
+              }
+            >
+              ¥
+              120
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
