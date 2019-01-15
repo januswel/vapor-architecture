@@ -1,10 +1,10 @@
 import { Action } from 'redux'
 
-export type DefineAction<T extends string, Payload> = Action<T> &
-  (Payload extends never
-    ? {}
-    : {
-        readonly payload: { readonly [K in keyof Payload]: Payload[K] }
-      })
-
-export type DefineState<InitialState extends {}> = { readonly [K in keyof InitialState]: InitialState[K] }
+type Handlers<State, Types extends string, Actions extends Action<Types>> = {
+  readonly [Type in Types]: (state: State, action: Actions) => State
+}
+export const createReducer = <State, Types extends string, Actions extends Action<Types>>(
+  initialState: State,
+  handlers: Handlers<State, Types, Actions>,
+) => (state = initialState, action: Actions) =>
+  handlers.hasOwnProperty(action.type) ? handlers[action.type as Types](state, action) : state

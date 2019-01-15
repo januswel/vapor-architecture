@@ -1,28 +1,15 @@
 import { Coin, VendingMachine } from '@januswel/domain'
 
-import { DefineAction, DefineState } from './util'
+import { createReducer } from './util'
 
 const CHARGE = 'vending-machine/charge'
 const SELL = 'vending-machine/sell'
 
-export type Action =
-  | DefineAction<typeof CHARGE, { chargedMoney: Coin.Entity }>
-  | DefineAction<typeof SELL, { itemId: number }>
+type Types = typeof CHARGE | typeof SELL
 
 const initialState = VendingMachine.factory()
 
-export type State = DefineState<typeof initialState>
-
-export default (state: State = initialState, action: Action) => {
-  switch (action.type) {
-    case CHARGE:
-      return VendingMachine.charge(state, action.payload.chargedMoney)
-    case SELL:
-      return VendingMachine.sell(state, action.payload.itemId)
-    default:
-      return state
-  }
-}
+export type State = typeof initialState
 
 export const charge = (chargedMoney: Coin.Entity) => ({
   type: CHARGE as typeof CHARGE,
@@ -36,4 +23,13 @@ export const sell = (itemId: number) => ({
   payload: {
     itemId,
   },
+})
+
+type ChargeAction = ReturnType<typeof charge>
+type SellAction = ReturnType<typeof sell>
+export type Action = ChargeAction | SellAction
+
+export default createReducer<State, Types, Action>(initialState, {
+  [CHARGE]: (state, action: ChargeAction) => VendingMachine.charge(state, action.payload.chargedMoney),
+  [SELL]: (state, action: SellAction) => VendingMachine.sell(state, action.payload.itemId),
 })
