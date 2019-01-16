@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
 import { Item } from '@januswel/domain'
 
-import { AppState } from '../store'
+import { AppState } from '../modules'
 
 const getInventory = (state: AppState) => state.vendingMachine.inventory
 const getChargedMoney = (state: AppState) => state.vendingMachine.chargedMoney
