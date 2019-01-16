@@ -1,8 +1,9 @@
-import getItems from './get-items'
 import { VendingMachine } from '@januswel/domain'
-import { AppState, createInitialState } from '../modules'
 
-const initialState: AppState = createInitialState()
+import getItems from './get-items'
+import { createInitialState } from '../modules'
+
+const initialState = createInitialState()
 
 describe('getItems', () => {
   it('returns data to display', () => {
