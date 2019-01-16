@@ -9,20 +9,20 @@ const styles = StyleSheet.create({
   },
 })
 
-export type Inventory = Array<ItemProps>
+export type Items = Array<ItemProps>
 export type Actions = ItemActions
 export interface Props {
-  inventory: Inventory
+  items: Items
   chargedMoney: number
   actions: Actions
 }
 export default (props: Props) => (
   <FlatList
     style={styles.container}
-    data={props.inventory}
+    data={props.items}
     extraData={props.chargedMoney}
     numColumns={2}
-    renderItem={({ item, index }) => <Item {...item} actions={props.actions} index={index} />}
+    renderItem={({ item }) => <Item {...item} actions={props.actions} />}
     keyExtractor={item => item.id.toString(10)}
   />
 )

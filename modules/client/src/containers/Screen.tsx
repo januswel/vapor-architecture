@@ -6,13 +6,13 @@ import { AnyAction } from 'redux'
 import { charge } from '../modules/vending-machine'
 import { sellAndCount } from '../usecases/vending-machine'
 import Screen from '../components/Screen'
-import getInventory from '../selectors/get-inventory'
+import getItems from '../selectors/get-items'
 import isWating from '../selectors/is-waiting'
 import { AppState } from '../modules'
 
 const mapStateToProps = (state: AppState) => ({
   chargedMoney: state.vendingMachine.chargedMoney,
-  inventory: getInventory(state),
+  items: getItems(state),
   isCommunicating: isWating(state),
 })
 

@@ -191,56 +191,32 @@ exports[`App renders correctly 1`] = `
     data={
       Array [
         Object {
-          "drink": Object {
-            "id": 0,
-            "imageUrl": "http://localhost:3000/images/coffee.png",
-            "name": "coffee",
-          },
-          "drinkId": 0,
           "id": 0,
+          "imageUrl": "http://localhost:3000/images/coffee.png",
           "isSoldOut": false,
           "isTooFewChargedMoney": true,
           "price": 120,
-          "remains": 10,
         },
         Object {
-          "drink": Object {
-            "id": 1,
-            "imageUrl": "http://localhost:3000/images/water.png",
-            "name": "water",
-          },
-          "drinkId": 1,
           "id": 1,
+          "imageUrl": "http://localhost:3000/images/water.png",
           "isSoldOut": false,
           "isTooFewChargedMoney": true,
           "price": 100,
-          "remains": 10,
         },
         Object {
-          "drink": Object {
-            "id": 2,
-            "imageUrl": "http://localhost:3000/images/soda.png",
-            "name": "soda",
-          },
-          "drinkId": 2,
           "id": 2,
+          "imageUrl": "http://localhost:3000/images/soda.png",
           "isSoldOut": false,
           "isTooFewChargedMoney": true,
           "price": 120,
-          "remains": 1,
         },
         Object {
-          "drink": Object {
-            "id": 0,
-            "imageUrl": "http://localhost:3000/images/coffee.png",
-            "name": "coffee",
-          },
-          "drinkId": 0,
           "id": 3,
+          "imageUrl": "http://localhost:3000/images/coffee.png",
           "isSoldOut": true,
           "isTooFewChargedMoney": true,
           "price": 120,
-          "remains": 0,
         },
       ]
     }
