@@ -3,7 +3,7 @@ import * as renderer from 'react-test-renderer'
 
 import ButtonLabel from './ButtonLabel'
 
-describe('', () => {
+describe('ButtonLabel', () => {
   it('renders button label for items sold out', () => {
     expect(
       renderer.create(

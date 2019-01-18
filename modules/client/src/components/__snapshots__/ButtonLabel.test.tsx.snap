@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders button label for items sold out 1`] = `
+exports[`ButtonLabel renders button label for items sold out 1`] = `
 <View
   style={
     Array [
@@ -44,7 +44,7 @@ exports[`renders button label for items sold out 1`] = `
 </View>
 `;
 
-exports[`renders button label for items sold out 2`] = `
+exports[`ButtonLabel renders button label for items sold out 2`] = `
 <View
   style={
     Array [
@@ -88,7 +88,7 @@ exports[`renders button label for items sold out 2`] = `
 </View>
 `;
 
-exports[`renders button label for items which is available to buy 1`] = `
+exports[`ButtonLabel renders button label for items which is available to buy 1`] = `
 <View
   style={
     Array [
@@ -130,7 +130,7 @@ exports[`renders button label for items which is available to buy 1`] = `
 </View>
 `;
 
-exports[`renders button label when charged money is too few to buy 1`] = `
+exports[`ButtonLabel renders button label when charged money is too few to buy 1`] = `
 <View
   style={
     Array [
