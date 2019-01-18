@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders button label for items sold out 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "height": 168,
+        "justifyContent": "space-around",
+        "margin": 16,
+        "width": 168,
+      },
+      Object {
+        "backgroundColor": "red",
+      },
+    ]
+  }
+>
+  <Image
+    resizeMode="contain"
+    source={
+      Object {
+        "uri": "http://example.com/assets/images/coffee.png",
+      }
+    }
+    style={
+      Object {
+        "height": 96,
+        "width": 96,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+      }
+    }
+  >
+    ¥
+    120
+  </Text>
+</View>
+`;
+
+exports[`renders button label for items sold out 2`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "height": 168,
+        "justifyContent": "space-around",
+        "margin": 16,
+        "width": 168,
+      },
+      Object {
+        "backgroundColor": "red",
+      },
+    ]
+  }
+>
+  <Image
+    resizeMode="contain"
+    source={
+      Object {
+        "uri": "http://example.com/assets/images/coffee.png",
+      }
+    }
+    style={
+      Object {
+        "height": 96,
+        "width": 96,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+      }
+    }
+  >
+    ¥
+    120
+  </Text>
+</View>
+`;
+
+exports[`renders button label for items which is available to buy 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "height": 168,
+        "justifyContent": "space-around",
+        "margin": 16,
+        "width": 168,
+      },
+      Object {},
+    ]
+  }
+>
+  <Image
+    resizeMode="contain"
+    source={
+      Object {
+        "uri": "http://example.com/assets/images/coffee.png",
+      }
+    }
+    style={
+      Object {
+        "height": 96,
+        "width": 96,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+      }
+    }
+  >
+    ¥
+    120
+  </Text>
+</View>
+`;
+
+exports[`renders button label when charged money is too few to buy 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "height": 168,
+        "justifyContent": "space-around",
+        "margin": 16,
+        "width": 168,
+      },
+      Object {
+        "backgroundColor": "gray",
+      },
+    ]
+  }
+>
+  <Image
+    resizeMode="contain"
+    source={
+      Object {
+        "uri": "http://example.com/assets/images/coffee.png",
+      }
+    }
+    style={
+      Object {
+        "height": 96,
+        "width": 96,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+      }
+    }
+  >
+    ¥
+    120
+  </Text>
+</View>
+`;

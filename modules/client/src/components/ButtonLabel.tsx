@@ -18,11 +18,14 @@ const styles = StyleSheet.create({
   },
 })
 
-const soldOutStyle = {
-  backgroundColor: 'red',
-}
-const tooFewChargedMoneyStyle = {
-  backgroundColor: 'gray',
+const BACKGROUND_COLORS = {
+  SOLD_OUT: {
+    backgroundColor: 'red',
+  },
+  TOO_FEW_CHARGED_MONEY: {
+    backgroundColor: 'gray',
+  },
+  AVAILABLE: {},
 }
 
 export interface Props {
@@ -32,11 +35,19 @@ export interface Props {
   isTooFewChargedMoney: boolean
 }
 
-export default (props: Props) => {
-  const backgroundStyle = props.isSoldOut ? soldOutStyle : props.isTooFewChargedMoney ? tooFewChargedMoneyStyle : {}
+const computeBackgroundColor = (props: Props) => {
+  if (props.isSoldOut) {
+    return BACKGROUND_COLORS.SOLD_OUT
+  }
+  if (props.isTooFewChargedMoney) {
+    return BACKGROUND_COLORS.TOO_FEW_CHARGED_MONEY
+  }
+  return BACKGROUND_COLORS.AVAILABLE
+}
 
+export default (props: Props) => {
   return (
-    <View style={[styles.container, backgroundStyle]}>
+    <View style={[styles.container, computeBackgroundColor(props)]}>
       <Image style={styles.thumbnail} source={{ uri: props.imageUrl }} resizeMode="contain" />
       <Text style={styles.price}>¥{props.price}</Text>
     </View>
