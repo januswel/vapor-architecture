@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Coin renders coin 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "silver",
+        "borderRadius": 48,
+        "height": 96,
+        "justifyContent": "center",
+        "width": 96,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 32,
+        }
+      }
+    >
+      10
+    </Text>
+  </View>
+</View>
+`;
