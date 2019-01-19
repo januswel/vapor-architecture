@@ -14,13 +14,7 @@ export const sellAndCount = (itemId: number) => (dispatch: Dispatch) => {
       'Content-Type': 'application/json; charset=utf-8',
     },
     body: JSON.stringify(sellAction),
+  }).finally(() => {
+    dispatch(receiveResponse())
   })
-    .then(response => {
-      console.log(response)
-      dispatch(receiveResponse())
-    })
-    .catch(e => {
-      console.log(e)
-      dispatch(receiveResponse())
-    })
 }
