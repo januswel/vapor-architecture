@@ -3,7 +3,7 @@ import { SafeAreaView, StyleSheet } from 'react-native'
 import NetworkIndicator from './NetworkIndicator'
 
 import Charger, { ChargedMoney, Actions as ChargerActions } from './Charger'
-import Inventory, { Inventory as InventoryType, Actions as InventoryActions } from './Inventory'
+import Display, { Items, Actions as InventoryActions } from './Display'
 
 const styles = StyleSheet.create({
   container: {
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 
 export type Actions = ChargerActions & InventoryActions
 export interface Props {
-  inventory: InventoryType
+  items: Items
   chargedMoney: ChargedMoney
   isCommunicating: boolean
   actions: Actions
@@ -23,7 +23,7 @@ export interface Props {
 export default (props: Props) => (
   <SafeAreaView style={styles.container}>
     <Charger {...props} />
-    <Inventory {...props} />
+    <Display {...props} />
     {props.isCommunicating ? <NetworkIndicator /> : null}
   </SafeAreaView>
 )

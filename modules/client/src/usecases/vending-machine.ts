@@ -8,19 +8,13 @@ export const sellAndCount = (itemId: number) => (dispatch: Dispatch) => {
   const sellAction = sell(itemId)
   dispatch(sellAction)
 
-  fetch('http://localhost:3000/items', {
+  return fetch('http://localhost:3000/items', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
     },
     body: JSON.stringify(sellAction),
+  }).finally(() => {
+    dispatch(receiveResponse())
   })
-    .then(response => {
-      console.log(response)
-      dispatch(receiveResponse())
-    })
-    .catch(e => {
-      console.log(e)
-      dispatch(receiveResponse())
-    })
 }

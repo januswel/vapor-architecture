@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
-import appReducer, { AppState } from './modules'
-export { AppState }
+import appReducer, { createInitialState } from './modules'
 
-export default createStore(appReducer, applyMiddleware(thunk))
+export default createStore(appReducer, createInitialState(), applyMiddleware(thunk))

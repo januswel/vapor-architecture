@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
-import { Item, Inventory } from '@januswel/domain'
+import { Item } from '@januswel/domain'
 
-import { AppState } from '../store'
+import { AppState } from '../modules'
 
 const getInventory = (state: AppState) => state.vendingMachine.inventory
 const getChargedMoney = (state: AppState) => state.vendingMachine.chargedMoney
@@ -11,11 +11,13 @@ const isSoldOut = (item: Item.Entity) => item.remains === 0
 
 export default createSelector(
   [getInventory, getChargedMoney],
-  (inventory: Inventory.Entity, chargedMoney: number) =>
+  (inventory, chargedMoney) =>
     Object.keys(inventory).map(id => {
       const item = inventory[id]
       return {
-        ...item,
+        id: item.id,
+        price: item.price,
+        imageUrl: item.drink.imageUrl,
         isTooFewChargedMoney: isTooFewChargedMoney(chargedMoney, item),
         isSoldOut: isSoldOut(item),
       }

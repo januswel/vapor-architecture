@@ -7,7 +7,7 @@ export interface Actions {
   sellAndCount: (id: number) => void
 }
 export interface Props extends ButtonLabelProps {
-  index: number
+  id: number
   actions: Actions
 }
 export default (props: Props) => {
@@ -16,7 +16,7 @@ export default (props: Props) => {
   ) : (
     <TouchableOpacity
       onPress={() => {
-        props.actions.sellAndCount(props.index)
+        props.actions.sellAndCount(props.id)
       }}
     >
       <ButtonLabel {...props} />
