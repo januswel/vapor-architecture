@@ -2,8 +2,8 @@ import { Coin, VendingMachine } from '@januswel/domain'
 
 import createReducer from './create-reducer'
 
-const CHARGE = 'vending-machine/charge'
-const SELL = 'vending-machine/sell'
+export const CHARGE = 'vending-machine/charge'
+export const SELL = 'vending-machine/sell'
 
 type Types = typeof CHARGE | typeof SELL
 
