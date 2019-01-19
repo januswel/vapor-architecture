@@ -4,8 +4,8 @@ import { ActivityIndicator, StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    bottom: 0,
-    right: 0,
+    bottom: 16,
+    right: 16,
   },
 })
 
