@@ -18,11 +18,6 @@ describe('network', () => {
   })
 
   describe('reducer', () => {
-    it('returns initial state with no state', () => {
-      expect(reducer(undefined, { type: 'initialize' })).toEqual({
-        numofWaitings: 0,
-      })
-    })
     it('reduces Actions for sending request', () => {
       const state = {
         numofWaitings: 0,
