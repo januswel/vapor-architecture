@@ -8,9 +8,9 @@ exports[`NetworkIndicator renders indicator 1`] = `
   size="large"
   style={
     Object {
-      "bottom": 0,
+      "bottom": 16,
       "position": "absolute",
-      "right": 0,
+      "right": 16,
     }
   }
 />
