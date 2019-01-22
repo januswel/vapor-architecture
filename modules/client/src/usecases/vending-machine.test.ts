@@ -38,9 +38,40 @@ describe('sellAndCount', () => {
     })
   })
 
+  it('dispatches expected actions when network communication is failed caused by server error', () => {
+    const ERROR_MESSAGE = 'Service Unavailable'
+    fetchMock.postOnce('http://localhost:3000/items', { status: 503, body: ERROR_MESSAGE })
+
+    const store = mockStore(createInitialState())
+
+    return store.dispatch(sellAndCount(0) as any).then(() => {
+      expect(store.getActions()).toEqual([
+        {
+          type: SEND_REQUEST,
+        },
+        {
+          type: SELL,
+          payload: {
+            itemId: 0,
+          },
+        },
+        {
+          error: true,
+          payload: {
+            error: new Error(ERROR_MESSAGE),
+          },
+          type: 'error/set',
+        },
+        {
+          type: RECEIVE_RESPONSE,
+        },
+      ])
+    })
+  })
+
   it('dispatches expected actions when network communication is failed', () => {
     const ERROR_MESSAGE = 'Network request failed'
-    fetchMock.postOnce('http://localhost:3000/items', { status: 503, body: ERROR_MESSAGE })
+    fetchMock.postOnce('http://localhost:3000/items', { status: 503, throws: new Error(ERROR_MESSAGE) })
 
     const store = mockStore(createInitialState())
 
