@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { SafeAreaView, StyleSheet } from 'react-native'
+import { SafeAreaView, StyleSheet, Text } from 'react-native'
 import NetworkIndicator from './NetworkIndicator'
 
 import Charger, { ChargedMoney, Actions as ChargerActions } from './Charger'
@@ -13,8 +13,12 @@ const styles = StyleSheet.create({
   },
 })
 
-export type Actions = ChargerActions & InventoryActions
+type ScreenActions = {
+  clearError: () => void
+}
+export type Actions = ChargerActions & InventoryActions & ScreenActions
 export interface Props {
+  error: Error | null
   items: Items
   chargedMoney: ChargedMoney
   isCommunicating: boolean
@@ -25,5 +29,14 @@ export default (props: Props) => (
     <Charger {...props} />
     <Display {...props} />
     {props.isCommunicating ? <NetworkIndicator /> : null}
+    {props.error != null && (
+      <Text
+        onPress={() => {
+          props.actions.clearError()
+        }}
+      >
+        {props.error.message}
+      </Text>
+    )}
   </SafeAreaView>
 )
