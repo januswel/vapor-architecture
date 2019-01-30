@@ -10,7 +10,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "yarn-lock" }}-{{ checksum "modules/domain/yarn-lock" }}-{{ checksum "modules/client/yarn-lock" }}-{{ checksum "modules/server/yarn-lock" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "modules/domain/yarn.lock" }}-{{ checksum "modules/client/yarn.lock" }}-{{ checksum "modules/server/yarn.lock" }}
             - v1-dependencies-
       - run: yarn install
       - run: yarn bootstrap
@@ -20,5 +20,5 @@ jobs:
             - modules/domain/node_modules
             - modules/client/node_modules
             - modules/server/node_modules
-          key: v1-dependencies-{{ checksum "yarn-lock" }}-{{ checksum "modules/domain/yarn-lock" }}-{{ checksum "modules/client/yarn-lock" }}-{{ checksum "modules/server/yarn-lock" }}
+          key: v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "modules/domain/yarn.lock" }}-{{ checksum "modules/client/yarn.lock" }}-{{ checksum "modules/server/yarn.lock" }}
       - run: yarn test
