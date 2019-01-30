@@ -12,7 +12,7 @@ describe('Drink', () => {
     })
     it('asserts with non-exist id', () => {
       assert.throws(() => {
-        const item = Drink.getById(3942)
+        Drink.getById(3942)
       })
     })
   })
