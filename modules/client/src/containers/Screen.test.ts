@@ -5,6 +5,7 @@ describe('mapStateToProps', () => {
   it('maps props for Screen from Redux store', () => {
     const props = mapStateToProps(store.getState())
     expect(props).toEqual({
+      error: null,
       chargedMoney: 0,
       isCommunicating: false,
       items: [
@@ -45,6 +46,7 @@ describe('mapDispatchToProps', () => {
   it('maps props for Screen from Redux store', () => {
     const props = mapDispatchToProps(store.dispatch)
     expect(props.actions).toBeDefined()
+    expect(props.actions.clearError).toBeDefined()
     expect(props.actions.charge).toBeDefined()
     expect(props.actions.sellAndCount).toBeDefined()
   })

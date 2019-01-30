@@ -1,18 +1,11 @@
 import isWaiting from './is-waiting'
-import { createInitialState } from '../modules'
-
-const initialState = createInitialState()
+import store from '../store'
+import { sendRequest } from '../modules/network'
 
 describe('isWaiting', () => {
   it('returns a flag indicates if the device is waiting or not', () => {
-    expect(isWaiting(initialState)).toBe(false)
-    expect(
-      isWaiting({
-        ...initialState,
-        network: {
-          numofWaitings: 3,
-        },
-      }),
-    ).toBe(true)
+    expect(isWaiting(store.getState())).toBe(false)
+    store.dispatch(sendRequest())
+    expect(isWaiting(store.getState())).toBe(true)
   })
 })
