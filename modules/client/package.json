@@ -1,6 +1,9 @@
 {
   "name": "@januswel/client",
   "version": "0.0.1",
+  "description": "client",
+  "author": "Takagi Kensuke <janus.wel.3@gmail.com>",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
